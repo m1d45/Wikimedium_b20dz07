@@ -2,7 +2,7 @@ body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; 
 }
 a { color: inherit;
 }
-h1, h2, h3, p, ul, blockquote { width: 700px; margin: 0 auto;
+article h1, h2, h3, p, ul, blockquote { width: 700px; margin: 0 auto;
 }
 h1, h2, h3 { font-family: 'PT Sans Caption', sans-serif; font-weight: bold;
 }
@@ -25,6 +25,16 @@ h3 + blockquote { margin-top: 6px;
 p, blockquote, li { margin-top: 29px; font-size: 20px; line-height: 34px;
 }
 blockquote { font-style: italic;
+  display: block;
+  position: relative;
+}
+blockquote::before {
+  content: "";
+  position: absolute;
+  width: 3px;
+  background: black;
+  height: 100%;
+  left: -23px;
 }
 img { display: block; width: 1020px; margin: 79px auto 0;
 }
