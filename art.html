@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      body {
+        background: #999;
+      }
+      artboard {
+        width: 600px;
+        height: 900px;
+        background: white;
+        display: block;
+        margin: 10px auto;
+      }
+      div, p, .letter {
+        display: block;
+        position: absolute;
+      }
+      .red {
+        width: 300px;
+        height: 300px;
+        background: red;
+        border-radius: 50%;
+        left: 200px;
+        top: 50px;
+        opacity: .9;
+        transition: all 2s ease-out;
+      }
+      .red:hover {
+        transform: scale(2);
+        transition: all .1s ease-out;
+      }
+      .black {
+        width: 500px;
+        height: 50px;
+        background: black;
+        left: 100px;
+        top: 200px;
+        transform: rotate(35deg);
+        transition: all .2s ease-out;
+      }
+      .black:hover {
+        left: 150px;
+        transition: all .6s ease-out;
+      }
+      .orange {
+        width: 200px;
+        height: 200px;
+        background: url(https://upload.wikimedia.org/wikipedia/commons/7/79/Narkomfin_Building_Moscow_2007_01.jpg);
+        left: 100px;
+        top: 200px;
+        transform: rotate(75deg);
+        transition: all .2s ease-out;
+        z-index: 1;
+        background-position: right;
+      }
+      .orange:hover {
+        transform: rotate(185deg);
+        transition: all .6s ease-out;
+      }
+      .letter {
+        font-size: 300px;
+        left: 300px;
+        top: 20px;
+        line-height: 300px;
+        color: green;
+        transform: rotate(180deg);
+      }
+    </style>
+  </head>
+  <body>
+
+    <artboard>
+      <div class="black">
+      </div>
+      <div class="orange">
+      </div>
+      <div class="red">
+      </div>
+      <div class="letter">A</div>
+    </artboard>
+
+  </body>
+</html>
