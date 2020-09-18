@@ -38,3 +38,9 @@ h2 + img { margin-top: 82px;
 }
 h3 + img { margin-top: 81px;
 }
+ul {
+  list-style-type: disc;
+}
+ul li {
+  margin-left: 30px;
+}
