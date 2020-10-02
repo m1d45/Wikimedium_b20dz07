@@ -6,7 +6,7 @@ article h1, h2, h3, p, ul, blockquote { width: 700px; margin: 0 auto;
 }
 h1, h2, h3 { font-family: 'PT Sans Caption', sans-serif; font-weight: bold;
 }
-h1 { margin-top: 67px; font-size: 38px; line-height: 45px;
+article h1 { margin-top: 67px; font-size: 38px; line-height: 45px;
 }
 h1 + p { margin-top: 8px; font-family: 'PT Sans Caption', sans-serif; font-size: 22px; line-height: 32px; color: rgba(0,0,0,.4);
 }
@@ -36,9 +36,9 @@ blockquote::before {
   height: 100%;
   left: -23px;
 }
-img { display: block; width: 1020px; margin: 79px auto 0;
+article img { display: block; width: 1020px; margin: 79px auto 0;
 }
-img + h2 { margin-top: 79px;
+article img + h2 { margin-top: 79px;
 }
 img + p,
 img + blockquote,
