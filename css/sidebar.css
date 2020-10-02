@@ -3,7 +3,7 @@ nav {
   display: block;
   position: fixed;
   left: 20px;
-  top: 20px;
+  top: 70px;
   padding: 30px;
   box-sizing: border-box;
   opacity: .1;
@@ -13,7 +13,7 @@ nav:hover {
   opacity: 1;
   transition: all .1s ease-out;
 }
-nav p {
+nav li:first-child {
   font-size: 14px;
   line-height: 16px;
   font-weight: bold;
@@ -22,11 +22,11 @@ nav p {
 nav a {
   text-decoration: none;
   font-size: 14px;
-  line-height: 27px;
+  line-height: 20px;
 }
 nav ul li {
   list-style-type: none;
-  margin: 0;
+  margin-bottom: 10px;
   width: 100%;
 }
 nav ul ul li {
