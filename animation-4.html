@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+    body {
+      background: #ccc;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    .btn {
+      width: 300px;
+      height: 50px;
+      background: black;
+      color: white;
+      padding: 15px 0;
+      text-align: center;
+      font-weight: bold;
+      letter-spacing: 3px;
+      transition: all 2s;
+      margin-bottom: 10px;
+      position: absolute;
+      top: 70px;
+    }
+    .btn:hover {
+      background: red;
+      transition: all .2s;
+    }
+    .btn:hover ~ .container .row {
+      animation-play-state: paused;
+    }
+    .container {
+      width: 300px;
+      height: 50px;
+      background: white;
+      position: relative;
+      padding: 15px 0;
+      overflow: hidden;
+      margin-bottom: 80px;
+    }
+    .row {
+      display: block;
+      position: absolute;
+      /* left: -800px; */
+      height: 20px;
+      width: 1104px;
+      /* background: red; */
+      animation: row-move 6s linear infinite;
+      /* animation-delay: -28s; */
+    }
+    .clock {
+      width: 300px;
+      height: 100px;
+      position: relative;
+      text-align: center;
+      /* background: white; */
+      animation: fadeout 1s linear;
+      animation-iteration-count: 1;
+      animation-delay: 35s;
+    }
+    .cl-e {
+      display: inline-block;
+      background: #111;
+      color: white;
+      width: 60px;
+      height: 100px;
+      border-radius: 4px;
+      vertical-align: top;
+      position: relative;
+      overflow: hidden;
+    }
+    .cl-d {
+      display: inline-block;
+      color: #111;
+      width: 16px;
+      height: 100px;
+      vertical-align: top;
+      line-height: 100px;
+      font-size: 60px;
+      opacity: 0;
+      animation: blink .5s linear alternate infinite;
+    }
+    .num {
+      width: 60px;
+      line-height: 100px;
+      font-size: 60px;
+      position: absolute;
+    }
+    .sec-e {
+      animation: sec .1s linear infinite;
+    }
+    .sec-d {
+      animation: dec .6s steps(6) infinite;
+    }
+    .min-e {
+      animation: sec 6s steps(10) infinite;
+    }
+    .min-d {
+      animation: dec 36s steps(6) infinite;
+    }
+    @keyframes blink {
+      0% {opacity: 1;}
+      100% {opacity: 0;}
+    }
+    @keyframes sec {
+      /* 0% {top: 0;}
+      100% {top: -1000%;} */
+      0% {top: -1000%;}
+      100% {top: 0%;}
+    }
+    @keyframes dec {
+      /* 0% {top: 0;}
+      100% {top: -600%;} */
+      0% {top: -600%;}
+      100% {top: 0%;}
+    }
+    @keyframes fadeout {
+      0% {opacity: 1;}
+      100% {opacity: 0;}
+    }
+
+    @keyframes row-move {
+      0% {right: -804px;}
+      100% {right: calc(100% - 302px);}
+    }
+
+    </style>
+  </head>
+  <body>
+    <div class="btn">
+      ||
+    </div>
+    <div class="container">
+      <div class="row">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipis
+      </div>
+    </div>
+
+    <div class="clock">
+      <div class="cl-e">
+        <div class="num min-d">
+         5 0 1 2 3 4 5
+        </div>
+      </div><!--
+      --><div class="cl-e">
+        <div class="num min-e">
+          9 0 1 2 3 4 5 6 7 8 9
+        </div>
+      </div>
+      <div class="cl-d">:</div>
+      <div class="cl-e">
+        <div class="num sec-d">
+          5 0 1 2 3 4 5
+        </div>
+      </div>
+      <div class="cl-e">
+        <div class="num sec-e">
+          9 0 1 2 3 4 5 6 7 8 9
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
