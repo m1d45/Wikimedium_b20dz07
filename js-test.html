@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style media="screen">
+      .box {
+        display: inline-block;
+        width: 200px;
+        height: 200px;
+        background: grey;
+        transition: all .5s;
+      }
+      .red {
+        background: red;
+      }
+      .blue {
+        background: blue;
+        position: absolute;
+        top: 100px;
+        left: 300px;
+      }
+      .black {
+        background: black;
+      }
+      .hidden {
+        opacity: 0;
+      }
+      .blocker {
+        display: none;
+      }
+      .rounder {
+        border-radius: 50%;
+      }
+      .transform {
+        transform: rotate(45deg);
+      }
+    </style>
+    <script>
+    $(document).ready(function(){
+    	$(".orange, .blue").click(function(){
+    		$(".blue.hidden").removeClass("blocker");
+        setTimeout(function(){
+          $(".blue").toggleClass("hidden");
+        }, 1);
+        setTimeout(function(){
+          $(".blue.hidden").addClass("blocker");
+        }, 300);
+    	});
+      
+      $(".red").click(function () {
+        if ($(".red").hasClass("rounder")) {
+          $(".orange").toggleClass("hidden");
+        }
+        $(this).toggleClass("rounder");
+      });
+    });
+
+    </script>
+  </head>
+  <body>
+    <div class="box red"></div>
+    <div class="box blue"></div>
+    <div class="box orange"></div>
+  </body>
+</html>
