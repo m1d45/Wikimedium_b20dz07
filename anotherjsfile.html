@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style media="screen">
+    #box {
+      width: 200px;
+      height: 200px;
+      left: calc(50% - 100px);
+      top: 100px;
+      background-image: url('0.jpg');
+      background-size: 100% auto;
+      position: absolute;
+      display: block;
+      transition: all 1s;
+    }
+    .img-box {
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background-size: 100% auto;
+      transition: all 1s;
+      opacity: 0;
+
+    }
+    #img0 {
+      background-image: url('0.jpg');
+    }
+    #img1 {
+      background-image: url('1.jpg');
+    }
+    #img2 {
+      background-image: url('2.jpg');
+    }
+    #img3 {
+      background-image: url('3.jpg');
+    }
+    </style>
+    <script type="text/javascript">
+    $(document).mousemove(function(e) {
+        let body_size_x = $( window ).width();
+        let body_size_y = $( window ).height();
+        let half_body_size_x = parseInt(body_size_x / 2);
+        let half_body_size_y = parseInt(body_size_y / 2);
+        let left_dir = e.pageX;
+        let top_dir = e.pageY;
+        let left = left_dir < half_body_size_x;
+        let right = left_dir > half_body_size_x;
+        let top = top_dir < half_body_size_y;
+        let bottom = top_dir > half_body_size_y;
+        let bg0 = "url('0.jpg')";
+        let bg1 = "url('1.jpg')";
+        let bg2 = "url('2.jpg')";
+        let bg3 = "url('3.jpg')";
+
+        $('#body').html(body_size_x + ' + ' + body_size_y);
+        $('#top').html(top_dir);
+        $('#left').html(left_dir);
+        if (left && top) {
+           $('#img0').css('opacity', '1');
+         } else $('#img0').css('opacity', '0');
+          if (left && bottom) {
+           $('#img3').css('opacity', '1');
+         } else $('#img3').css('opacity', '0');
+          if (right && top) {
+           $('#img1').css('opacity', '1');
+         } else $('#img1').css('opacity', '0');
+          if (right && bottom) {
+           $('#img2').css('opacity', '1');
+         } else $('#img2').css('opacity', '0');
+      });
+    </script>
+  </head>
+  <body>
+    <div id="box">
+      <div class="img-box" id="img0"></div>
+      <div class="img-box" id="img1"></div>
+      <div class="img-box" id="img2"></div>
+      <div class="img-box" id="img3"></div>
+
+    </div>
+    <div id="body"></div>
+    <div id="top"></div>
+    <div id="left"></div>
+  </body>
+</html>

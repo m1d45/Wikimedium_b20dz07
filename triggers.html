@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <style media="screen">
+      html {
+        cursor: grabbing;
+      }
+      body {
+        height: 2000px;
+      }
+      div {
+        /* position: fixed; */
+        top: 0;
+        left: 0;
+        color: white;
+        font-size: 40px;
+        line-height: 100px;
+        text-align: center;
+        height: 300px;
+        width: 100%;
+        background: url('https://images.theconversation.com/files/283650/original/file-20190711-173325-1oj4n2t.jpg') center;
+        background-size: cover;
+      }
+      .svg {
+        cursor: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/heart.svg"), auto;
+      }
+      .png {
+        cursor: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/heart.png"), auto;
+        /* position: fixed; */
+        /* left: 20%;
+        top: 200px; */
+      }
+      .box {
+        width: 100px;
+        height: 100px;
+        background: black;
+        display: inline-block;
+        position: relative;
+        border: 1px solid white;
+      }
+      #draggable {
+      	background: orange;
+      	color: white;
+      	width: 200px;
+      	height: 200px;
+      	line-height: 200px;
+      	text-align: center;
+      	cursor: move;
+        display:block;
+      }
+      #draggable:hover {
+      	background: #e69500;
+      }
+
+    </style>
+    <script type="text/javascript">
+    $(function() {
+      $("#draggable, .box").draggable();
+    });
+
+    let x;
+
+    $(window).on('scroll', function() {
+    	x = $(window).scrollTop();
+    	$('#draggable').css('transform', 'rotate(' + 0 + parseInt(x / 10) + 'deg)');
+      $('#draggable').css('border-radius', 0 + parseInt(x / 10) + 'px ');
+
+      if(x > 200) {
+        $("#draggable").css('background-color', 'red');
+      }
+    });
+
+    $(function () {
+      let count = 0;
+      $('.png').html(count);
+      $('.png').click(function () {
+        count += 1;
+        $('.png').html(count);
+        // if (count == 2) {
+        //   $(this).removeClass('png');
+        // }
+        if(count == 2) {
+          $("#draggable").css('background-color', 'blue');
+        }
+      });
+
+    });
+    </script>
+  </head>
+  <body>
+    <div class="box png"></div>
+    <div class="box svg"></div>
+    <div id="draggable"></div>
+    <!-- <div class=""></div> -->
+
+
+
+  </body>
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mailtoharshit/San-Francisco-Font-/sanfrancisco.css">
+  <style media="screen">
+    * {
+      box-sizing: border-box;
+    }
+    body, html {
+      padding: 0;
+      margin: 0;
+    }
+    input[type="text"],
+    input[type="password"],
+    input[type="tel"],
+    input[type="email"],
+    select,
+    p,
+    h3,
+    form > label,
+    form > div,
+    hr {
+      display: block;
+      position: relative;
+      width: 460px;
+      margin: 15px auto;
+    }
+    input[type="text"],
+    input[type="password"],
+    input[type="tel"],
+    input[type="email"],
+    select {
+      height: 46px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 17px;
+      line-height: 46px;
+      padding: 0 15px;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+    }
+    input[type="radio"] {
+      margin-right: 5px;
+    }
+    hr {
+      width: 1024px;
+      border: none;
+      border-bottom: 1px solid #ddd;
+    }
+    p {
+      text-align: center;
+    }
+    input + p {
+      text-align: left;
+      font-size: 14px;
+      color: #999;
+      margin-top: -5px;
+      margin-bottom: 15px;
+    }
+    form > div > * {
+      width: auto;
+      display: inline-block;
+      margin: 0;
+      margin-right: 15px;
+    }
+    form > label {
+      padding-left: 20px;
+    }
+    form > label > input {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    form > label > span {
+      font-size: 14px;
+      display: block;
+      color: #999;
+    }
+    button {
+      margin: 0 auto;
+      font-size: 17px;
+      line-height: 1.47059;
+      font-weight: 400;
+      letter-spacing: -.022em;
+      font-family: SF Pro Text,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+      background-color: #0070c9;
+      background: linear-gradient(#42a1ec,#0070c9);
+      border: 1px solid #07c;
+      border-radius: 4px;
+      color: #fff;
+      cursor: pointer;
+      display: block;
+      min-width: 30px;
+      padding: 4px 15px;
+      text-align: center;
+      white-space: nowrap;
+    }
+    nav {
+      display: block;
+      width: 100%;
+      position: relative;
+      background: #111;
+      height: 44px;
+    }
+    .split-input {
+      display: flex;
+      justify-content: space-between;
+      width: 460px;
+      margin: 15px auto;
+    }
+    .split-input input {
+      display: inline-block;
+      width: 48%;
+      margin: 15px 0;
+    }
+    .menu-search {
+      display: none;
+    }
+    .menu-items {
+      display: flex;
+      margin: 0 auto;
+      justify-content: space-between;
+      width: 1024px;
+    }
+    .menu-items a {
+      text-decoration: none;
+      line-height: 44px;
+      color: white;
+      opacity: .8;
+    }
+    .banner {
+      height: 260px;
+      display: block;
+      width: 100%;
+      background: #222;
+      margin: 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .banner h1 {
+      display: block;
+      position: absolute;
+      width: 100%;
+      margin: 0;
+      top: 100px;
+      color: white;
+      text-align: center;
+    }
+    .colors {
+      width: 500px;
+      left: calc(50% - 250px);
+      position: absolute;
+      margin: 0 auto;
+      height: 400px;
+      top: -50px;
+      opacity: .8;
+      animation: colors 100s linear infinite;
+    }
+    .circle {
+      position: absolute;
+      display: block;
+      width: 200px;
+      height: 200px;
+      border-radius: 100%;
+      filter: blur(120px);
+    }
+    .cl-0 {
+      background: #c10101;
+      top: 0;
+      left: 0;
+    }
+    .cl-1 {
+      background: #c1c101;
+      bottom: 0;
+      left: 10%;
+    }
+    .cl-2 {
+      background: #c101c1;
+      top: 5%;
+      right: 0;
+    }
+    .cl-3 {
+      background: #0101c1;
+      bottom: 2%;
+      right: 10%;
+    }
+    @keyframes colors {
+      0% {transform: rotate(0deg);}
+      100% {transform: rotate(360deg);}
+    }
+  </style>
+  </head>
+  <body>
+    <nav>
+      <div class="menu-items">
+        <a href="#">Logo</a>
+        <a href="#">Mac</a>
+        <a href="#">iPad</a>
+        <a href="#">iPhone</a>
+        <a href="#">Watch</a>
+        <a href="#">TV</a>
+        <a href="#">Music</a>
+        <a href="#">Support</a>
+        <a href="#">Search</a>
+        <a href="#">Cart</a>
+      </div>
+      <div class="menu-search">
+        <span></span>
+        <input type="text" name="" value="">
+        <a href="#"></a>
+      </div>
+    </nav>
+
+    <div class="banner">
+      <div class="colors">
+        <div class="circle cl-0"></div>
+        <div class="circle cl-1"></div>
+        <div class="circle cl-2"></div>
+        <div class="circle cl-3"></div>
+      </div>
+      <h1>Create Your Apple ID</h1>
+    </div>
+
+    <form action="index.html" method="post">
+      <p>One Apple ID is all you need to access all Apple services.
+Already have an Apple ID? <a href="">Find it here</a></p>
+      <div class="split-input">
+        <input type="text" name="" value="" placeholder="First name">
+        <input type="text" name="" value="" placeholder="Last name">
+      </div>
+
+      <h3>COUNTRY / REGION</h3>
+      <select class="" name="country">
+        <option value="1">United States</option>
+        <option value="2">Russia</option>
+      </select>
+      <input type="text" name="" value="" placeholder="Birthday">
+      <hr>
+      <input type="email" name="" value="" placeholder="name@example.com">
+      <p>This will be your new Apple ID.</p>
+      <input type="password" name="" value="" placeholder="Password">
+      <input type="password" name="" value="" placeholder="Confirm password">
+      <hr>
+      <select class="" name="phonecode">
+        <option value="+1">(+1) United States</option>
+        <option value="+7">(+7) Russia</option>
+      </select>
+      <input type="tel" name="" value="" placeholder="Phone number">
+      <p>Be sure to enter a phone number you can always access. It will be used to verify your identity any time you sign in on a new device or web browser. Messaging or data rates may apply.</p>
+      <div class="">
+        <p>Verify with:</p>
+        <div class="">
+          <input type="radio" name="Verify" value=""><label for="">Text message</label>
+        </div>
+        <div class="">
+          <input type="radio" name="Verify" value=""><label for="">Phone call</label>
+        </div>
+      </div>
+      <hr>
+      <label for=""><input type="checkbox" name="" value="">Announcements<span>Get announcements, recommendations, and updates about Apple products, services, and software.</span> </label>
+      <label for=""><input type="checkbox" name="" value="">Apps, Music, TV, and More<span>Get new releases, exclusive content, special offers, and recommendations for apps, music, movies, TV, books, podcasts, Apple Pay, Apple Card and more.</span> </label>
+      <label for=""><input type="checkbox" name="" value="">Apple News Newsletter<span>The best stories, picked by the Apple News editors, delivered right to your inbox.</span> </label>
+      <hr>
+      <p>Your Apple ID information is used to allow you to sign in securely and access your data. Apple records certain usage data for security, support, and reporting purposes. <a href="">See how your data is managed.</a></p>
+      <button type="submit" name="button">Continuer</button>
+
+
+    </form>
+
+  </body>
+</html>

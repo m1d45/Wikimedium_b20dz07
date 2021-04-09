@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <style media="screen">
+    html {
+      cursor: grabbing;
+    }
+    body {
+      height: 2000px;
+    }
+    div {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 700px;
+      width: 200%;
+      background: url('https://images.theconversation.com/files/283650/original/file-20190711-173325-1oj4n2t.jpg') center;
+      background-size: cover;
+    }
+    .svg {
+      cursor: move;
+      left: 100%;
+      top: 0;
+      /* cursor: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/heart.svg"), auto; */
+    }
+    .png {
+      cursor: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/heart.png"), auto;
+    }
+    .box {
+      width: 100px;
+      height: 100px;
+      background: black;
+      display: inline-block;
+      /* position: relative; */
+      border: 1px solid white;
+    }
+    </style>
+    <script type="text/javascript">
+    $(function() {
+    	$("div").draggable();
+    });
+
+    let x;
+    $(window).on('scroll', function() {
+    	x = $(window).scrollTop();
+    	$('.svg').css('left', 100 - parseInt(x) + '% ');
+    });
+
+    $(function () {
+      let count = 0;
+      $(window).click(function () {
+        count += 1;
+        $('#counter_text').html(count);
+        if (count == 2) {
+          $('.png').removeClass('png');
+        }
+        if (count >= 2) {
+          $('#counter_text').css('color', 'yellow');
+        }
+        if (count >= 4) {
+          $('#counter_text').css('color', 'orange');
+        }
+        if (count >= 6) {
+          $('#counter_text').css('color', 'red');
+        }
+      });
+    });
+    </script>
+  </head>
+  <body>
+    <div class="box png">
+      <p style="color: white;" id="counter_text">0</p>
+    </div>
+    <div class="box svg"></div>
+
+
+  </body>
+</html>
