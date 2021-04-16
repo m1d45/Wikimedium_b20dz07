@@ -3,10 +3,13 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mailtoharshit/San-Francisco-Font-/sanfrancisco.css">
   <style media="screen">
     * {
       box-sizing: border-box;
+      outline: none;
     }
     body, html {
       padding: 0;
@@ -104,6 +107,7 @@
       position: relative;
       background: #111;
       height: 44px;
+      z-index: 20;
     }
     .split-input {
       display: flex;
@@ -117,19 +121,50 @@
       margin: 15px 0;
     }
     .menu-search {
-      display: none;
+      display: flex;
+      margin: 0 auto;
+      justify-content: space-between;
+      width: 540px;
+      transition: all .4s ease;
+    }
+    .menu-search > * {
+      transition: all .4s ease;
+    }
+    .menu-search input {
+      position: relative;
+      background: transparent;
+      color: white;
+      font-size: 17px;
+      border: none;
+      margin: 0;
+      font-weight: 200;
+    }
+    .fade.menu-search > span {
+      transform: translateX(24px);
+    }
+    .fade.menu-search > input {
+      transform: translateX(12px);
+    }
+    .fade.menu-search > a {
+      transform: translateX(6px);
     }
     .menu-items {
       display: flex;
       margin: 0 auto;
       justify-content: space-between;
       width: 1024px;
+      transition: all .4s ease;
     }
     .menu-items a {
       text-decoration: none;
       line-height: 44px;
       color: white;
       opacity: .8;
+      transition: all .4s ease;
+
+    }
+    .fade.menu-items a {
+      transform: scale(.8);
     }
     .banner {
       height: 260px;
@@ -187,16 +222,96 @@
       bottom: 2%;
       right: 10%;
     }
+
+    .icon {
+      display: block;
+      position: relative;
+      height: 44px;
+      width: 36px;
+      background-position: top center;
+      background-size: 16px 44px;
+      background-repeat: no-repeat;
+    }
+    .icon-logo {
+      background-image: url(images/apple.svg);
+    }
+    .icon-cart {
+      background-image: url(images/cart.svg);
+    }
+    .icon-search {
+      background-image: url(images/search.svg);
+      background-size: 18px 88px;
+    }
+    span.icon-search {
+      background-position: center 100% ;
+    }
+    .cross {
+      display: block;
+      position: absolute;
+      width: 1px;
+      height: 20px;
+      background: #999;
+      top: 12px;
+    }
+    .cross-1 {
+      transform: rotate(45deg);
+    }
+    .cross-2 {
+      transform: rotate(-45deg);
+    }
+    .black_screen {
+      display: block;
+      position: fixed;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      transition: all .4s ease;
+      z-index: 10;
+      -webkit-backdrop-filter: blur(4px);
+    }
+    .hidden {
+      display: none;
+    }
+    .fade {
+      opacity: 0;
+      transition: all .4s ease;
+    }
+
+
     @keyframes colors {
       0% {transform: rotate(0deg);}
       100% {transform: rotate(360deg);}
     }
   </style>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $("a.icon-search, .icon-close").click(function () {
+        $(this).parent().toggleClass("fade");
+        $(".black_screen").addClass("fade");
+        setTimeout(function () {
+          $(".menu-search, .menu-items, .black_screen").toggleClass("hidden");
+        }, 500);
+        setTimeout(function () {
+          if ($(".menu-search").hasClass("hidden")) {
+            $(".menu-items").removeClass("fade");
+          } else {
+            $(".menu-search").removeClass("fade");
+            $(".black_screen").removeClass("fade");
+
+          }
+        }, 600);
+      })
+    });
+  </script>
   </head>
   <body>
+    <div class="black_screen hidden">
+    </div>
     <nav>
       <div class="menu-items">
-        <a href="#">Logo</a>
+        <a href="javascript:void(0)" class="icon icon-logo"></a>
         <a href="#">Mac</a>
         <a href="#">iPad</a>
         <a href="#">iPhone</a>
@@ -204,13 +319,17 @@
         <a href="#">TV</a>
         <a href="#">Music</a>
         <a href="#">Support</a>
-        <a href="#">Search</a>
-        <a href="#">Cart</a>
+        <a href="javascript:void(0)" class="icon icon-search"></a>
+        <a href="javascript:void(0)" class="icon icon-cart"></a>
       </div>
-      <div class="menu-search">
-        <span></span>
-        <input type="text" name="" value="">
-        <a href="#"></a>
+      <div class="menu-search hidden fade">
+        <span class="icon icon-search"></span>
+        <input type="text" name="" value="" placeholder="Search apple.com">
+        <a href="javascript:void(0)" class="icon icon-close">
+          <span class="cross cross-1"></span>
+          <span class="cross cross-2"></span>
+
+        </a>
       </div>
     </nav>
 
@@ -265,7 +384,7 @@ Already have an Apple ID? <a href="">Find it here</a></p>
       <label for=""><input type="checkbox" name="" value="">Apple News Newsletter<span>The best stories, picked by the Apple News editors, delivered right to your inbox.</span> </label>
       <hr>
       <p>Your Apple ID information is used to allow you to sign in securely and access your data. Apple records certain usage data for security, support, and reporting purposes. <a href="">See how your data is managed.</a></p>
-      <button type="submit" name="button">Continuer</button>
+      <button type="submit" name="button">Continue</button>
 
 
     </form>
